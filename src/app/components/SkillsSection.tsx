@@ -15,6 +15,7 @@ import { SiFastapi } from "react-icons/si";
 import { DiPostgresql } from "react-icons/di";
 import { DiMysql } from "react-icons/di";
 import { FaGitAlt } from "react-icons/fa";
+import { IoArrowForward } from "react-icons/io5";
 
 const TECHNOLOGIES = [
   { name: "Javascript", icon: <IoLogoJavascript className="w-10 h-10" /> },
@@ -60,12 +61,25 @@ export default function SkillsSection() {
               </motion.span>
             </span>
           </h2>
+          <div className="hidden lg:flex items-center gap-2 text-gray-600 text-sm animate-pulse">
+            <span>hover the cards!</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <IoArrowForward className="w-4 h-4" />
+            </motion.div>
+          </div>
         </div>
         <div className="flex flex-wrap gap-2 items-center justify-center col-span-2 md:col-span-1">
           {TECHNOLOGIES.map((technology) => (
             <div
               key={technology.name}
-              className="bg-[#F2F1E7] p-4 w-24 h-24 rounded-md flex flex-col items-center justify-center hover:bg-gray-100 shadow-sm transition-all duration-300"
+              className="bg-[#F2F1E7] p-4 w-24 h-24 rounded-md flex flex-col items-center justify-center hover:bg-[#F8F7F0] hover:shadow-sm transition-all duration-200"
               onMouseEnter={() => {
                 setSelectedTechnology(technology.name);
               }}

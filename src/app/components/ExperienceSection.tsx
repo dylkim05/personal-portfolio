@@ -27,8 +27,7 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="bg-[rgb(220,220,200)] p-6 sm:p-8 md:p-12 lg:p-20 w-full flex flex-col items-center justify-center gap-8 scroll-mt-20">
-      <h2 className="font-bold text-4xl md:text-5xl text-center">Experience</h2>
+    <section className="bg-[rgb(220,220,200)] p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center gap-8 scroll-mt-20 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch justify-center w-full gap-4 sm:gap-6">
         {experiences.map((experience) => (
           <div

@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowDownIcon } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import Image from "next/image";
@@ -19,7 +18,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="flex min-h-screen min-w-screen flex-col items-center justify-center gap-4 p-4 sm:justify-between sm:p-8 md:p-20">
+    <section className="bg-gradient-to-b from-background via-[rgb(240,240,220)] to-[rgb(220,220,200)] flex min-h-screen min-w-screen flex-col items-center justify-center gap-6 p-4 sm:p-8 md:p-20">
       {isLoaded ? (
         <>
           <motion.h1
@@ -100,22 +99,6 @@ export default function HeroSection() {
               </motion.div>
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: [0, -10, 0] }}
-            transition={{
-              duration: 0.25,
-              delay: 2.5,
-              y: {
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-            }}
-            className="flex items-center justify-center"
-          >
-            <ArrowDownIcon className="h-8 w-8 sm:h-10 sm:w-10" />
-          </motion.div>
         </>
       ) : (
         <div className="flex h-full w-full items-center justify-center text-2xl font-bold"></div>
