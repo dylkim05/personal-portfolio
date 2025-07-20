@@ -35,19 +35,18 @@ const TECHNOLOGIES = [
 ];
 
 export default function SkillsSection() {
-  const [selectedTechnology, setSelectedTechnology] = useState<string>("code");
+  const [selectedTechnology, setSelectedTechnology] = useState<string>("logic");
 
   return (
     <section className="bg-[rgb(220,220,200)] p-6 sm:p-8 md:p-10 w-full">
-      <h2 className="font-bold text-4xl md:hidden text-center">Skills</h2>
+      <h2 className="font-bold text-4xl lg:hidden text-center">Skills</h2>
       <div
         id="skills"
-        className="max-w-6xl mx-auto grid grid-cols-2 items-center justify-center rounded-lg gap-3 p-4 sm:p-8 md:p-10 scroll-mt-20"
+        className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center justify-center rounded-lg gap-3 p-4 sm:p-8 md:p-10 scroll-mt-20"
       >
         <div className="flex flex-col gap-5 justify-center">
-          <h2 className="font-bold self-start flex-col gap-3 max-w-md text-5xl hidden md:flex">
-            <span>Let&apos;s solve</span>
-            <span>real problems</span>
+          <h2 className="font-bold self-start flex-col gap-2 max-w-md text-5xl hidden lg:flex">
+            <span>Solving real problems</span>
             <span>
               with{" "}
               <motion.span
@@ -57,7 +56,7 @@ export default function SkillsSection() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className={`bg-gradient-to-r from-purple-700 via-violet-600 to-purple-800 bg-clip-text text-transparent font-bold`}
               >
-                {selectedTechnology || "code"}
+                {selectedTechnology}
               </motion.span>
             </span>
           </h2>
@@ -66,12 +65,12 @@ export default function SkillsSection() {
           {TECHNOLOGIES.map((technology) => (
             <div
               key={technology.name}
-              className="bg-white p-4 w-24 h-24 rounded-md flex flex-col items-center justify-center hover:bg-gray-100 shadow-sm transition-all duration-300"
+              className="bg-[#F2F1E7] p-4 w-24 h-24 rounded-md flex flex-col items-center justify-center hover:bg-gray-100 shadow-sm transition-all duration-300"
               onMouseEnter={() => {
                 setSelectedTechnology(technology.name);
               }}
               onMouseLeave={() => {
-                setSelectedTechnology("code");
+                setSelectedTechnology("logic");
               }}
             >
               {technology.icon}
