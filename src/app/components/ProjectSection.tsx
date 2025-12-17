@@ -1,52 +1,91 @@
+import { caudex, quintessential } from "../lib/fonts";
+import Image from "next/image";
+
 const projects = [
   {
     title: "AppliTrack",
-    date: "2024 - Present",
-    description: [
-      "Developed a full-stack job application tracker that centralizes status, deadlines, and follow-ups in one dashboard",
-      "Utilized Amazon SES to send email reminders, ensuring users stay on top of application timelines",
-      "Implemented file uploads using Amazon S3 pre-signed URLs, allowing users to attach resumes to job applications",
-      "Integrated Google OAuth to sync application deadlines with users' calendars, enabling cross-platform scheduling",
-    ],
+    date: "March 2024 - August 2024",
+    image: "/applitrack.png",
+    description:
+      "A modern job application tracker that helps students and early-career professionals stay organized across recruiting cycles.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"],
   },
   {
-    title: "School Store Website",
-    date: "Sep 2022 - May 2023",
-    description: [
-      "Deployed a database-driven school store e-commerce platform, supporting real-time inventory and order management",
-      "Engineered a custom role-based authentication system with session management and tokenized password reset, enhancing security and admin access control",
-      "Implemented accessibility features to enhance usability for students with disabilities working at the store",
+    title: "StudyGlow",
+    date: "July 2025 - August 2025",
+    image: "/studyglow.png",
+    description:
+      "An AI-powered course management platform that ingests syllabi and coursework to give students personalized, contextual study support in one place.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "LangChain",
+      "OpenAI",
+      "pgvector",
     ],
   },
 ];
 
 export default function ProjectSection() {
   return (
-    <section className="bg-[rgb(220,220,200)] p-6 sm:p-8 md:p-10 w-full flex flex-col items-center justify-center gap-8 scroll-mt-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch justify-center w-full gap-4 sm:gap-6">
+    <section
+      id="projects"
+      className="container mx-auto flex flex-col items-start justify-center gap-8 scroll-mt-20 mb-20"
+    >
+      <h1
+        className={`${quintessential.className} text-xl sm:text-3xl md:text-5xl tracking-tighter text-[#22211b] lowercase select-none`}
+      >
+        my projects
+      </h1>
+
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-2 items-stretch justify-center w-full gap-5 sm:gap-6 ${caudex.className}`}
+      >
         {projects.map((project) => (
-          <div
+          <article
             key={project.title}
-            className="bg-[#F2F1E7] p-4 sm:p-6 w-full h-full rounded-lg flex flex-col gap-3 sm:gap-4"
+            className="group relative flex flex-col rounded-xl border border-[#e3dccb] bg-[#faf6ee]/70"
           >
-            <div className="flex flex-col items-center justify-center w-full">
-              <div className="flex flex-col sm:flex-row sm:justify-between w-full items-start sm:items-center gap-2 sm:gap-0">
-                <div className="font-bold text-lg sm:text-xl lg:text-2xl leading-tight">
-                  {project.title}
-                </div>
-                <div className="text-sm sm:text-base lg:text-lg text-gray-700">
-                  {project.date}
+            <div className="relative w-full overflow-hidden bg-[#f1e7d4]">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={600}
+                className="h-56 w-full object-cover object-top sm:h-64"
+                priority
+              />
+            </div>
+
+            <div className="flex flex-1 flex-col gap-3 p-4 sm:p-5">
+              <div className="flex flex-col gap-1">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
+                  <h2 className="font-semibold text-lg sm:text-xl lg:text-2xl tracking-tight text-[#22211b]">
+                    {project.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-600">
+                    {project.date}
+                  </p>
                 </div>
               </div>
+
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-1">
+                {project.tech.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full border border-[#e0d6c3] bg-[#f7efe0] px-2.5 py-1 text-xs font-medium text-gray-800"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-            <ul className="flex flex-col gap-2 text-sm sm:text-base lg:text-lg list-disc list-inside leading-relaxed">
-              {project.description.map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          </article>
         ))}
       </div>
     </section>
