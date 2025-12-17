@@ -95,7 +95,7 @@ export default function ExperienceSection() {
                 alt="image"
                 width={500}
                 height={500}
-                className="object-contain rounded-lg"
+                className="object-contain rounded-lg hidden lg:block"
               />
             )}
           </div>

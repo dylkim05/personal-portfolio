@@ -20,7 +20,7 @@ const SKILLS = [
 
 export default function SkillsSection() {
   return (
-    <section className="container mx-auto rounded-lg px-4 py-10 mb-20 sm:px-8 sm:py-16 md:px-0 md:py-20 bg-[url(/skills_bg.jpg)] bg-cover bg-no-repeat bg-center bg-blend-overlay">
+    <section className="container mx-auto rounded-lg px-4 py-10 mb-20 sm:px-8 sm:py-16 md:px-0 md:py-20 bg-[url(/skills_bg.jpg)] bg-cover bg-no-repeat bg-center bg-blend-overlay transition-all duration-300">
       <div className="flex flex-col items-center justify-center gap-8 rounded-lg p-6 text-center sm:p-10 md:gap-10">
         <div className="space-y-4">
           <h2
@@ -33,7 +33,7 @@ export default function SkillsSection() {
 
         <div className="space-y-6 text-[#22211b]">
           <div
-            className={`${caudex.className} mx-auto flex max-w-4xl flex-wrap justify-center gap-x-3 gap-y-2 text-lg sm:text-5xl select-none`}
+            className={`${caudex.className} mx-auto flex max-w-4xl flex-wrap justify-center gap-x-3 gap-y-2 text-lg md:text-3xl lg:text-5xl select-none transition-all duration-300`}
           >
             {SKILLS.map((skill, index) => (
               <div
