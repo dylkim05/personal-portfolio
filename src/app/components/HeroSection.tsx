@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col gap-10 items-center justify-center p-30 mx-auto">
+    <section className="flex flex-col gap-10 items-center justify-center p-25 mx-auto">
       <div className="flex items-center justify-center gap-10">
         <h1
           className={`text-center text-7xl lg:text-8xl tracking-tighter text-black ${quintessential.className} select-none`}
