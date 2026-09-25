@@ -1,13 +1,20 @@
-import Image from "next/image";
-
 const experiences = [
   {
+    title: "Full Stack Software Engineer Co-op",
+    date: "January - July 2026",
+    company: "Robotics and AI Institute",
+    location: "Cambridge, MA",
+    description: [
+      "Built a production robotics data collection platform (TanStack Start, Python, Google Pub/Sub, ROS) managing the full request-to-upload lifecycle across Franka and UMI gripper hardware",
+      "Established Vitest testing infrastructure achieving 80%+ code coverage",
+      "Developed a custom UI component library (React, TypeScript, Storybook) standardizing front-end design patterns across all company web applications",
+    ],
+  },
+  {
     title: "CS 2000 Teaching Assistant",
-    date: "Sep 2025 - Dec 2025",
+    date: "September - December 2025",
     company: "Northeastern University",
     location: "Boston, MA",
-    logo: "/neu.png",
-    image: "/tas.jpg",
     description: [
       "Facilitated weekly labs for 36 students, providing hands-on debugging support to reinforce course concepts",
       "Graded weekly assignments for 600+ students, delivering targeted feedback to enhance programming proficiency",
@@ -16,12 +23,10 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer Intern",
-    date: "June 2025 - August 2025",
+    title: "AI/ML Software Engineer Intern",
+    date: "June - August 2025",
     company: "Draup",
     location: "The Woodlands, TX",
-    logo: "/draup.png",
-    image: "/draup_team.jpeg",
     description: [
       "Built a multi-modal RAG pipeline with ChromaDB, supporting PDF, Excel, PowerPoint, and text ingestion with fixed-size chunking and vector embedding generation through Ollama and OpenAI models",
       "Optimized retrieval pipeline using query rewriting and cross-encoder re-ranking, achieving 93% retrieval accuracy",
@@ -45,7 +50,7 @@ export default function ExperienceSection() {
           >
             <div className="flex flex-col gap-2 items-start w-full">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-4 w-full">
-                <div className="font-bold text-lg md:text-2xl leading-tight">
+                <div className="font-semibold text-lg md:text-2xl leading-tight">
                   {experience.title}
                 </div>
                 <div className="text-sm md:text-lg text-gray-700">
@@ -53,20 +58,9 @@ export default function ExperienceSection() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-4 w-full">
-                <div className="flex items-center gap-2">
-                  {experience.logo && (
-                    <Image
-                      src={experience.logo}
-                      width={40}
-                      height={40}
-                      alt={`${experience.company} logo`}
-                      className="object-contain w-8 h-8 md:w-10 md:h-10"
-                    />
-                  )}
-                  <span className="text-base md:text-xl font-medium">
-                    {experience.company}
-                  </span>
-                </div>
+                <span className="text-base md:text-xl font-medium">
+                  {experience.company}
+                </span>
                 <div className="text-sm md:text-lg text-gray-700">
                   {experience.location}
                 </div>
