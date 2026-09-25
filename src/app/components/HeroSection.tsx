@@ -10,8 +10,7 @@ export default function HeroSection() {
 
       <div className="flex flex-col gap-6 items-start max-w-3xl">
         <p className="text-xl md:text-3xl lg:text-4xl text-gray-800 tracking-tight">
-          Hello! I&apos;m a Computer Science student at{" "}
-          <span className="text-rose-600">Northeastern University</span>{" "}
+          Hello! I&apos;m a Computer Science student at Northeastern University
           specializing in full-stack software development.
         </p>
 
