@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { caudex, quintessential } from "../lib/fonts";
 
 const experiences = [
   {
@@ -34,70 +33,50 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section className="container mx-auto flex flex-col items-start justify-center gap-8 scroll-mt-20 mb-20">
-      <h1
-        className={`${quintessential.className}  text-xl sm:text-3xl md:text-5xl tracking-tighter text-[#22211b] lowercase select-none`}
-      >
-        my experience
-      </h1>
-      <div
-        className={`grid grid-cols-1 items-stretch justify-center w-full gap-4 sm:gap-6 ${caudex.className}`}
-      >
-        {experiences.map((experience, index) => (
+    <section className="flex flex-col gap-6 md:gap-8 items-start w-full text-left">
+      <h2 className="text-3xl md:text-5xl tracking-tighter text-[#22211b] select-none">
+        Experience
+      </h2>
+      <div className="flex flex-col gap-10 md:gap-12 items-start w-full">
+        {experiences.map((experience) => (
           <div
             key={experience.title}
-            className={`w-full h-full rounded-lg flex items-center justify-center lg:gap-10 ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : ""
-            }`}
+            className="flex flex-col gap-4 md:gap-6 items-start w-full"
           >
-            <div className="flex flex-col gap-3 sm:gap-4">
-              <div className="flex flex-col items-center justify-center w-full">
-                <div className="flex flex-col sm:flex-row sm:justify-between w-full items-start sm:items-center gap-2 sm:gap-0">
-                  <div className="font-bold text-lg sm:text-xl lg:text-2xl leading-tight">
-                    {experience.title}
-                  </div>
-                  <div className="text-sm sm:text-base lg:text-lg text-gray-700">
-                    {experience.date}
-                  </div>
+            <div className="flex flex-col gap-2 items-start w-full">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-4 w-full">
+                <div className="font-bold text-lg md:text-2xl leading-tight">
+                  {experience.title}
                 </div>
-                <div className="flex flex-col sm:flex-row sm:justify-between w-full items-start sm:items-center gap-2 sm:gap-0 mt-2">
-                  <div className="flex items-center gap-2">
-                    {experience.logo && (
-                      <Image
-                        src={experience.logo}
-                        width={32}
-                        height={32}
-                        alt={`${experience.company} logo`}
-                        className="object-contain w-8 h-8 sm:w-10 sm:h-10"
-                      />
-                    )}
-                    <span className="text-base sm:text-lg lg:text-xl font-medium">
-                      {experience.company}
-                    </span>
-                  </div>
-                  <div className="text-sm sm:text-base lg:text-lg text-gray-700">
-                    {experience.location}
-                  </div>
+                <div className="text-sm md:text-lg text-gray-700">
+                  {experience.date}
                 </div>
               </div>
-              <ul className="flex flex-col gap-3 text-sm sm:text-base lg:text-lg leading-normal">
-                {experience.description?.map((item, index) => (
-                  <li key={index} className="text-gray-800">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-4 w-full">
+                <div className="flex items-center gap-2">
+                  {experience.logo && (
+                    <Image
+                      src={experience.logo}
+                      width={40}
+                      height={40}
+                      alt={`${experience.company} logo`}
+                      className="object-contain w-8 h-8 md:w-10 md:h-10"
+                    />
+                  )}
+                  <span className="text-base md:text-xl font-medium">
+                    {experience.company}
+                  </span>
+                </div>
+                <div className="text-sm md:text-lg text-gray-700">
+                  {experience.location}
+                </div>
+              </div>
             </div>
-
-            {experience.image && (
-              <Image
-                src={experience.image}
-                alt="image"
-                width={500}
-                height={500}
-                className="object-contain rounded-lg hidden lg:block"
-              />
-            )}
+            <ul className="flex flex-col gap-3 text-base md:text-lg leading-normal text-gray-800">
+              {experience.description?.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

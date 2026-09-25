@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import HeroSection from "./components/HeroSection";
 import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExperienceSection";
@@ -8,7 +7,7 @@ import ExperienceSection from "./components/ExperienceSection";
 export default function Home() {
   return (
     <main
-      className={`container mx-auto flex flex-col space-y-10 items-center justify-center min-h-screen min-w-screen bg-gradient-to-b from-background via-[rgb(240,240,220)] to-[rgb(220,220,200)] px-4 md:px-8 lg:px-0`}
+      className={`flex flex-col gap-20 md:gap-32 px-6 sm:px-12 md:px-25 py-16 md:py-24 items-start justify-start min-h-screen w-full bg-gradient-to-b from-background via-[rgb(240,240,220)] to-[rgb(220,220,200)] `}
     >
       <HeroSection />
       <SkillsSection />

@@ -1,13 +1,6 @@
-import { Caudex, Quintessential } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
-export const quintessential = Quintessential({
-  variable: "--font-quintessential",
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
-export const caudex = Caudex({
-  variable: "--font-caudex",
-  weight: ["400", "700"],
+export const dmSans = DM_Sans({
+  weight: "variable",
   subsets: ["latin"],
 });
